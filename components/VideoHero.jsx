@@ -1,13 +1,14 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { home } from "../content/home";
 
 export default function VideoHero() {
   const { hero, accessibility } = home;
+  const videoRef = useRef(null);
   const [videoFailed, setVideoFailed] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const [heroScrollOpacity, setHeroScrollOpacity] = useState(1);
   const headlineLines = useMemo(() => {
     const words = hero.headline.trim().split(/\s+/);
@@ -39,36 +40,47 @@ export default function VideoHero() {
     };
   }, []);
 
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el || videoFailed) return;
+    const tryPlay = async () => {
+      try {
+        await el.play();
+      } catch {
+        // Some browsers may block autoplay until user interaction.
+      }
+    };
+    void tryPlay();
+  }, [videoFailed]);
+
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-brand-dark opacity-0 animate-hero-shell motion-reduce:opacity-100 motion-reduce:animate-none">
       <div className="absolute inset-0 overflow-hidden">
         {!videoFailed ? (
           <video
-            className="absolute inset-0 z-0 h-full w-full origin-center object-cover opacity-[0.04] blur-[5px] brightness-[0.66] contrast-110 animate-hero-kenburns will-change-transform motion-reduce:animate-none"
-            poster={hero.fallbackImage}
+            ref={videoRef}
+            className={`absolute inset-0 z-0 h-full w-full origin-center object-cover brightness-[0.74] contrast-110 transition-opacity duration-700 ease-premium will-change-transform motion-reduce:animate-none ${
+              videoReady ? "animate-hero-kenburns opacity-[0.22] blur-[2px]" : "opacity-0"
+            }`}
+            preload="auto"
             playsInline
             muted
             loop
             autoPlay
             aria-label={accessibility.heroVideoLabel}
+            onLoadedData={() => {
+              setVideoReady(true);
+              videoRef.current?.play().catch(() => {});
+            }}
+            onCanPlay={() => {
+              setVideoReady(true);
+              videoRef.current?.play().catch(() => {});
+            }}
             onError={() => setVideoFailed(true)}
           >
             <source src={hero.videoFile} type="video/mp4" />
           </video>
-        ) : (
-          <div className="absolute inset-0 z-0">
-            <Image
-              src={hero.fallbackImage}
-              alt=""
-              width={1920}
-              height={1080}
-              className="h-full w-full object-cover"
-              priority
-              unoptimized
-              style={{ maxWidth: "100%" }}
-            />
-          </div>
-        )}
+        ) : null}
         <div
           className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-black/55 to-transparent"
           aria-hidden

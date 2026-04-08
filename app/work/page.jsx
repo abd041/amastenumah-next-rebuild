@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../../components/Reveal";
+import StageGallery from "../../components/StageGallery";
 import VideoCard from "../../components/VideoCard";
 import { work } from "../../content/work";
 
@@ -121,6 +122,36 @@ export default function Page({ searchParams }) {
             ))
           )}
         </div>
+      </div>
+
+      <div id="conference-speeches" className="mx-auto mt-24 max-w-[1140px] px-5 md:px-8">
+        <Reveal>
+          <h2 className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.08] uppercase tracking-wide text-white">{work.sectionConferenceTitle}</h2>
+        </Reveal>
+        <Reveal delayMs={80}>
+          <p className="mt-6 max-w-[760px] font-body text-[18px] leading-[1.8] text-white md:text-[20px]">{work.sectionConferenceIntro}</p>
+        </Reveal>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {work.conferenceVideos.map((item, i) => (
+            <Reveal key={item.link} delayMs={120 + i * 80}>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-xl border border-white/15 border-l-2 border-l-brand-red/75 bg-gradient-to-br from-brand-charcoal/95 via-brand-charcoal/90 to-brand-red/10 p-6 shadow-[0_14px_30px_-18px_rgba(0,0,0,0.52)] transition-all duration-300 ease-premium hover:scale-[1.02] hover:border-brand-red/45 hover:border-l-brand-red"
+              >
+                <p className="font-ui text-xs font-bold uppercase tracking-[0.18em] text-brand-red">Watch</p>
+                <h3 className="mt-2 font-display text-[1.5rem] uppercase leading-[1.08] tracking-wide text-white">{item.title}</h3>
+                <p className="mt-3 font-body text-[16px] leading-relaxed text-white">{item.description}</p>
+                <span className="mt-4 inline-flex items-center gap-1 font-ui text-sm font-semibold text-brand-red transition-colors duration-300 ease-premium group-hover:text-white">
+                  <span>{work.watchOnYoutubeLabel}</span>
+                  <span className="transition-transform duration-300 ease-premium group-hover:translate-x-1">→</span>
+                </span>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+        <StageGallery items={work.stageStills} />
       </div>
     </main>
   );

@@ -9,8 +9,10 @@ export const site = {
   tagline: "Customer service isn't broken. It's working exactly as designed.",
   email: "amas@amastenumah.com",
   social: {
-    linkedin: "https://linkedin.com/in/amas-tenumah",
-    twitter: "https://twitter.com/amastenumah",
+    linkedin: "https://www.linkedin.com/in/amastenumah/",
+    x: "https://x.com/amastenumah",
+    instagram: "https://www.instagram.com/amastenumah/",
+    tiktok: "https://www.tiktok.com/@amastenumah0",
   },
   nav: [
     { label: "The Work", href: "/work" },
@@ -35,18 +37,26 @@ export const site = {
   },
 
   logo: {
-    src: "/images/amas-logo.webp",
+    src: "/images/header-logo.svg",
     alt: "Amas Tenumah",
     width: 160,
     height: 56,
   },
   footer: {
+    logo: {
+      src: "/images/footer-logo.svg",
+      alt: "Amas Tenumah",
+      width: 160,
+      height: 56,
+    },
     copyright: "© Amas Tenumah",
     followHeading: "Follow",
     pagesHeading: "Pages",
     socialLabels: {
       linkedin: "LinkedIn",
-      twitter: "X (Twitter)",
+      x: "X",
+      instagram: "Instagram",
+      tiktok: "TikTok",
     },
   },
   accessibility: {

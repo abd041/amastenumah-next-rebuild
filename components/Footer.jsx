@@ -10,11 +10,11 @@ export default function Footer() {
         <div className="grid gap-14 md:grid-cols-2 md:gap-24 lg:grid-cols-3">
           <div>
             <Image
-              width={site.logo.width}
-              height={site.logo.height}
-              src={site.logo.src}
+              width={site.footer.logo.width}
+              height={site.footer.logo.height}
+              src={site.footer.logo.src}
               className="h-14 w-auto"
-              alt={site.logo.alt}
+              alt={site.footer.logo.alt}
               sizes="160px"
               unoptimized
               style={{ maxWidth: "100%" }}
@@ -36,12 +36,32 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={site.social.twitter}
+                  href={site.social.x}
                   className="group relative inline-flex text-gray-400 transition-all duration-400 ease-premium hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand-red/80 after:transition-transform after:duration-400 after:ease-premium hover:after:scale-x-100"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {site.footer.socialLabels.twitter}
+                  {site.footer.socialLabels.x}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.social.instagram}
+                  className="group relative inline-flex text-gray-400 transition-all duration-400 ease-premium hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand-red/80 after:transition-transform after:duration-400 after:ease-premium hover:after:scale-x-100"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {site.footer.socialLabels.instagram}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.social.tiktok}
+                  className="group relative inline-flex text-gray-400 transition-all duration-400 ease-premium hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand-red/80 after:transition-transform after:duration-400 after:ease-premium hover:after:scale-x-100"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {site.footer.socialLabels.tiktok}
                 </a>
               </li>
               <li>
