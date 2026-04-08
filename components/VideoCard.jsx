@@ -27,7 +27,7 @@ export default function VideoCard({ title, description, youtubeId }) {
       </div>
       <div className="p-6">
         <h3 className="font-display text-[1.35rem] uppercase tracking-wide text-white">{title}</h3>
-        <p className="mt-3 font-body text-[17px] leading-relaxed text-brand-light/92">{description}</p>
+        <p className="mt-3 font-body text-[17px] leading-relaxed text-white">{description}</p>
         <p className="mt-4 font-ui text-xs font-semibold uppercase tracking-[0.16em] text-brand-red">{work.watchOnYoutubeLabel}</p>
       </div>
     </a>

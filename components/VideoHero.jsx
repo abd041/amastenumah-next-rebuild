@@ -116,8 +116,8 @@ export default function VideoHero() {
                 {headlineLines.map((line, index) => (
                   <span
                     key={`${line}-${index}`}
-                    className="block opacity-0 motion-reduce:opacity-100 motion-reduce:animate-none"
-                    style={{ animation: `headline-line-rise 0.8s ease-out ${index * 120}ms forwards` }}
+                    className="block opacity-0 animate-fade-up motion-reduce:opacity-100 motion-reduce:animate-none"
+                    style={{ animationDelay: `${index * 120}ms` }}
                   >
                     {line}
                   </span>
