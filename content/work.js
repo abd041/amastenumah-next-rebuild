@@ -17,6 +17,12 @@ export const work = {
   sectionVideosTitle: "Video library",
   sectionConferenceTitle: "Conference & Speeches",
   sectionConferenceIntro: "Watch featured talks and see stage stills from recent speaking engagements.",
+  stageGallery: {
+    defaultTag: "ON STAGE",
+    closeLabel: "Close gallery",
+    prevLabel: "Previous image",
+    nextLabel: "Next image",
+  },
   filters: {
     all: "All",
     keynote: "Keynote",

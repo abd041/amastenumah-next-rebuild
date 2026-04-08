@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-export default function StageGallery({ items }) {
+export default function StageGallery({ items, labels }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const gridRef = useRef(null);
 
@@ -76,7 +76,7 @@ export default function StageGallery({ items }) {
             />
             <div className="pointer-events-none absolute inset-0 bg-black/0 opacity-0 transition-all duration-300 ease-premium group-hover:bg-black/40 group-hover:opacity-100" />
             <span className="absolute left-3 top-3 rounded-md bg-black/60 px-2 py-1 font-ui text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
-              {still.tag || "ON STAGE"}
+              {still.tag || labels.defaultTag}
             </span>
             <span className="pointer-events-none absolute bottom-3 left-3 right-3 font-ui text-[11px] font-semibold uppercase tracking-[0.12em] text-white opacity-0 transition-opacity duration-300 ease-premium group-hover:opacity-100">
               {still.alt}
@@ -96,7 +96,7 @@ export default function StageGallery({ items }) {
             type="button"
             onClick={() => setActiveIndex(null)}
             className="absolute right-4 top-4 rounded-full bg-black/55 p-2 text-white transition-colors duration-300 ease-premium hover:bg-black/80"
-            aria-label="Close gallery"
+            aria-label={labels.closeLabel}
           >
             <X className="h-5 w-5" />
           </button>
@@ -107,7 +107,7 @@ export default function StageGallery({ items }) {
               setActiveIndex((prev) => ((prev ?? 0) - 1 + items.length) % items.length);
             }}
             className="absolute left-4 rounded-full bg-black/55 p-2 text-white transition-colors duration-300 ease-premium hover:bg-black/80"
-            aria-label="Previous image"
+            aria-label={labels.prevLabel}
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
@@ -118,7 +118,7 @@ export default function StageGallery({ items }) {
               setActiveIndex((prev) => ((prev ?? 0) + 1) % items.length);
             }}
             className="absolute right-4 rounded-full bg-black/55 p-2 text-white transition-colors duration-300 ease-premium hover:bg-black/80"
-            aria-label="Next image"
+            aria-label={labels.nextLabel}
           >
             <ChevronRight className="h-6 w-6" />
           </button>

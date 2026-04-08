@@ -19,6 +19,14 @@ export const site = {
     { label: "HOLD", href: "/hold" },
     { label: "Let's Talk", href: "/talk" },
   ],
+  loader: {
+    wordmark: {
+      lead: "A",
+      left: "MAS",
+      right: "TENUMAH",
+    },
+    subtitle: "Customer service authority",
+  },
 
   metadata: {
     title: "Amas Tenumah — Customer Service Authority",

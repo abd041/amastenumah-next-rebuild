@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { home } from "../content/home";
 
@@ -56,12 +57,27 @@ export default function VideoHero() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-brand-dark opacity-0 animate-hero-shell motion-reduce:opacity-100 motion-reduce:animate-none">
       <div className="absolute inset-0 overflow-hidden">
+        {!videoReady || videoFailed ? (
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={hero.fallbackImage}
+              alt=""
+              width={1920}
+              height={1080}
+              className="h-full w-full object-cover"
+              priority
+              unoptimized
+              style={{ maxWidth: "100%" }}
+            />
+          </div>
+        ) : null}
         {!videoFailed ? (
           <video
             ref={videoRef}
             className={`absolute inset-0 z-0 h-full w-full origin-center object-cover brightness-[0.74] contrast-110 transition-opacity duration-700 ease-premium will-change-transform motion-reduce:animate-none ${
-              videoReady ? "animate-hero-kenburns opacity-[0.22] blur-[2px]" : "opacity-0"
+              videoReady ? "animate-hero-kenburns opacity-[0.62]" : "opacity-0"
             }`}
+            poster={hero.fallbackImage}
             preload="auto"
             playsInline
             muted
@@ -82,11 +98,11 @@ export default function VideoHero() {
           </video>
         ) : null}
         <div
-          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-black/55 to-transparent"
+          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/58 via-black/34 to-transparent"
           aria-hidden
         />
-        <div className="pointer-events-none absolute inset-0 z-[2] bg-black/18" aria-hidden />
-        <div className="pointer-events-none absolute inset-0 z-[2] bg-[rgba(211,47,47,0.22)]" aria-hidden />
+        <div className="pointer-events-none absolute inset-0 z-[2] bg-black/8" aria-hidden />
+        <div className="pointer-events-none absolute inset-0 z-[2] bg-brand-red/4" aria-hidden />
         <div className="noise-layer z-[2]" aria-hidden />
       </div>
 
@@ -95,7 +111,7 @@ export default function VideoHero() {
           <div className="max-w-[min(100%,36rem)] text-left md:max-w-3xl">
             <div className="flex flex-col space-y-6">
               <h1
-                className="relative z-10 font-display text-6xl font-semibold uppercase leading-[0.92] tracking-widest text-[#FFFFFF] [text-shadow:0_2px_16px_rgba(0,0,0,0.62)] md:text-8xl"
+                className="relative z-10 font-display text-6xl font-semibold uppercase leading-[0.92] tracking-widest text-white [text-shadow:0_2px_16px_rgba(0,0,0,0.62)] md:text-8xl"
               >
                 {headlineLines.map((line, index) => (
                   <span

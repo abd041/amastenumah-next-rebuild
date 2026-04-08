@@ -2,6 +2,7 @@
 
 import { gsap } from "gsap";
 import { useEffect, useRef, useState } from "react";
+import { site } from "../content/global";
 
 export default function PageTransitions({ children }) {
   const loaderRef = useRef(null);
@@ -34,15 +35,15 @@ export default function PageTransitions({ children }) {
 
   return (
     <>
-      <div ref={loaderRef} className="pointer-events-none fixed inset-0 z-[120] grid place-items-center bg-[#090909] opacity-0">
+      <div ref={loaderRef} className="pointer-events-none fixed inset-0 z-[120] grid place-items-center bg-brand-dark opacity-0">
         <div className="text-center">
           <p className="font-display text-[clamp(2.1rem,5vw,3.4rem)] uppercase tracking-[0.08em] text-white">
-            <span className="loader-wordmark text-brand-red">A</span>
-            <span className="loader-wordmark">MAS</span>
+            <span className="loader-wordmark text-brand-red">{site.loader.wordmark.lead}</span>
+            <span className="loader-wordmark">{site.loader.wordmark.left}</span>
             <span className="loader-wordmark mx-3 inline-block h-8 w-px bg-brand-red align-middle" aria-hidden />
-            <span className="loader-wordmark">TENUMAH</span>
+            <span className="loader-wordmark">{site.loader.wordmark.right}</span>
           </p>
-          <p className="loader-sub mt-4 font-ui text-[11px] uppercase tracking-[0.2em] text-brand-light/80">Customer service authority</p>
+          <p className="loader-sub mt-4 font-ui text-[11px] uppercase tracking-[0.2em] text-brand-light/80">{site.loader.subtitle}</p>
         </div>
       </div>
       <div className={loaderActive ? "opacity-0" : "opacity-100 transition-opacity duration-300 ease-premium"}>{children}</div>

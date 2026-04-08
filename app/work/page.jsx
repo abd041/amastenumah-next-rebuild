@@ -151,7 +151,7 @@ export default function Page({ searchParams }) {
             </Reveal>
           ))}
         </div>
-        <StageGallery items={work.stageStills} />
+        <StageGallery items={work.stageStills} labels={work.stageGallery} />
       </div>
     </main>
   );
