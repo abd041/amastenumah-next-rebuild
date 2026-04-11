@@ -20,6 +20,11 @@ export const hold = {
     { label: "Amazon", href: "https://www.amazon.com/s?k=HOLD+Amas+Tenumah" },
     { label: "Barnes & Noble", href: "https://www.barnesandnoble.com/s/HOLD%20Amas%20Tenumah" },
   ],
+  /** Below retailer buttons — mailto on the address only. */
+  signedCopy: {
+    beforeEmail: "Want a signed copy? Email ",
+    email: "amas@amastenumah.com",
+  },
   pullQuotes: [
     "Hold is a sharp mirror to customer service.",
     "The hidden economics driving the suffering in modern CX.",

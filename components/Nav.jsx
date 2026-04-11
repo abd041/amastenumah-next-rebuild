@@ -33,7 +33,7 @@ export default function Nav() {
   const linkClass = (href) => {
     const active = pathname === href || pathname.startsWith(`${href}/`);
     return [
-      "group relative inline-flex font-ui text-[13px] font-semibold uppercase tracking-[0.08em] transition-all duration-400 ease-premium after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand-red after:transition-transform after:duration-400 after:ease-premium hover:after:scale-x-100",
+      "group relative inline-flex font-ui text-[13px] font-semibold uppercase tracking-[0.08em] transition-all duration-400 ease-premium after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-gradient-to-r after:from-brand-red after:to-[#ff7a7a] after:transition-transform after:duration-400 after:ease-premium hover:after:scale-x-100",
       active ? "text-brand-red after:scale-x-100" : "text-brand-charcoal hover:text-brand-red",
     ].join(" ");
   };

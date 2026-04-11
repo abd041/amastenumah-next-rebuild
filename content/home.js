@@ -6,8 +6,22 @@
 
 export const home = {
   hero: {
+    /** Background loop — H.264 MP4 under /public/videos (see `VideoHero`). */
     videoFile: "/videos/hero-reel.mp4",
-    fallbackImage: "/images/hero-fallback.jpg",
+    /**
+     * Optional smaller MP4 for narrow viewports (≤768px), e.g. 720p / ~1.5 Mbps — big win vs one 6MB file for phones.
+     * Export from the same edit: HandBrake “Web” preset, RF ~24–28, max 1280px wide.
+     */
+    videoFileNarrow: undefined,
+    /**
+     * Optional WebM (VP9) — often 25–40% smaller than MP4 at similar quality. Listed before MP4 where used.
+     * Omit on iOS-only testing; Safari falls back to MP4.
+     */
+    videoFileWebm: undefined,
+    /** `<video poster>` + still shown until frames decode. */
+    posterImage: "/images/Amas still on stage 2013.png",
+    /** If `videoFile` fails to load. */
+    fallbackImage: "/images/Amas still on stage 2013.png",
     headline: "CUSTOMER SERVICE ISN'T BROKEN.",
     subheadline: "IT'S WORKING EXACTLY AS DESIGNED.",
     subtext: "The question is: designed for whom?",

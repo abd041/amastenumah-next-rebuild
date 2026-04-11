@@ -54,7 +54,7 @@ export default function Page() {
             ))}
           </div>
           <Reveal delayMs={220}>
-            <p className="mt-20 max-w-[32rem] whitespace-normal break-words font-display text-[clamp(2rem,4.2vw,3rem)] uppercase leading-[1.16] tracking-[0.055em] text-brand-red [text-shadow:0_8px_24px_rgba(0,0,0,0.35)]">
+            <p className="mt-20 max-w-[32rem] whitespace-normal break-words font-display text-[clamp(2rem,4.2vw,3rem)] uppercase leading-[1.3] tracking-[0.05em] text-brand-red [text-shadow:0_8px_24px_rgba(0,0,0,0.35)]">
               {hold.thesis}
             </p>
           </Reveal>
@@ -66,12 +66,23 @@ export default function Page() {
                   href={b.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-brand-red px-8 py-3 font-ui text-[13px] font-bold uppercase tracking-[0.08em] text-white shadow-[0_10px_24px_-14px_rgba(0,0,0,0.6)] transition-all duration-300 ease-premium hover:scale-105 hover:bg-brand-red-dark hover:shadow-[0_12px_28px_-14px_rgba(211,47,47,0.45)] active:scale-[0.98]"
+                  className="inline-flex items-center justify-center rounded-full bg-brand-red px-8 py-3 font-ui text-[13px] font-bold uppercase tracking-[0.08em] text-white shadow-[0_10px_24px_-14px_rgba(0,0,0,0.6)] transition-all duration-300 ease-premium hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-brand-red-dark hover:shadow-[0_10px_30px_rgba(239,68,68,0.25)] active:translate-y-0 active:scale-[0.98]"
                 >
                   {b.label}
                 </a>
               ))}
             </div>
+          </Reveal>
+          <Reveal delayMs={400}>
+            <p className="mx-auto mt-8 max-w-lg text-center font-body text-[14px] leading-relaxed text-brand-light/65">
+              {hold.signedCopy.beforeEmail}
+              <a
+                href={`mailto:${hold.signedCopy.email}`}
+                className="text-brand-light/75 underline decoration-transparent underline-offset-[4px] transition-all duration-300 ease-premium hover:text-[#ff3b3b] hover:decoration-[#ff3b3b]"
+              >
+                {hold.signedCopy.email}
+              </a>
+            </p>
           </Reveal>
         </div>
       </div>
