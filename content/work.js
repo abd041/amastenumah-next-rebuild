@@ -74,7 +74,7 @@ export const work = {
         "Fortune investigated why 61% of consumers leave customer service interactions unsatisfied. The answer: it may be working exactly as intended.",
       emphasis: ["61%", "working exactly as intended"],
       link: "https://fortune.com/2024/02/02/bad-customer-service-breaking-trust/",
-      logo: "/images/fox.webp",
+      logo: "/images/fortune-logo.png",
     },
     {
       outlet: "OPB (Oregon Public Broadcasting)",
@@ -136,7 +136,7 @@ export const work = {
     {
       title: "Full Keynote",
       description:
-        "Customer service isn't a department — it's a relationship. And right now, it's toxic. Amas unpacks why companies keep making the problem worse (hint: more AI isn't the answer) and what it takes to rebuild trust with the people who keep your business alive.",
+        "Customer service isn't a department — it's a relationship. And right now, it's toxic. In this keynote, Amas Tenumah unpacks why companies keep making the problem worse (hint: more AI isn't the answer) and what it actually takes to rebuild trust with the people who keep your business alive.",
       link: "https://youtu.be/UUoMG7BsybU",
     },
     {
