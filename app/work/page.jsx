@@ -3,7 +3,10 @@ import MediaAppearanceCard from "../../components/MediaAppearanceCard";
 import Reveal from "../../components/Reveal";
 import StageGallery from "../../components/StageGallery";
 import VideoCard from "../../components/VideoCard";
+import { site } from "../../content/global";
 import { work } from "../../content/work";
+
+const SOCIAL_ORDER = ["linkedin", "x", "instagram", "tiktok"];
 
 const FILTER_IDS = Object.keys(work.filters);
 
@@ -57,10 +60,12 @@ export default function Page({ searchParams }) {
                   date={a.date}
                   title={a.title}
                   description={a.description}
+                  cardBlurb={a.cardBlurb}
                   emphasis={a.emphasis ?? []}
                   link={a.link}
                   logo={a.logo}
                   viewLinkLabel={work.viewLinkLabel}
+                  postDescriptionQuote={a.postDescriptionQuote}
                 />
               </Reveal>
             </li>
@@ -123,7 +128,7 @@ export default function Page({ searchParams }) {
         </div>
       </div>
 
-      <div id="selected-talks" className="relative mx-auto mt-28 max-w-[1140px] px-5 md:mt-32 md:px-8">
+      <div id="the-stages" className="relative mx-auto mt-28 max-w-[1140px] px-5 md:mt-32 md:px-8">
         <div
           className="pointer-events-none absolute inset-0 -mx-4 rounded-[14px] bg-gradient-to-b from-brand-red/[0.06] via-transparent to-black/20 md:-mx-8"
           aria-hidden
@@ -169,6 +174,46 @@ export default function Page({ searchParams }) {
           </div>
         </div>
       </div>
+
+      <section
+        className="mx-auto mt-24 max-w-[1140px] border-t border-white/10 px-5 pb-6 pt-14 md:mt-28 md:px-8"
+        aria-labelledby="work-connect-heading"
+      >
+        <h2
+          id="work-connect-heading"
+          className="text-center font-ui text-[11px] font-bold uppercase tracking-[0.22em] text-brand-light/50"
+        >
+          Connect
+        </h2>
+        <ul className="mt-8 flex list-none flex-wrap justify-center gap-x-10 gap-y-5 p-0 text-center md:gap-x-14">
+          {SOCIAL_ORDER.map((id) => (
+            <li key={id}>
+              <a
+                href={site.social[id]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex flex-col items-center gap-1.5 font-ui text-[14px] text-brand-light/80 transition-colors duration-300 ease-premium hover:text-white"
+              >
+                <span className="font-semibold tracking-wide">{site.footer.socialLabels[id]}</span>
+                <span className="text-[13px] font-normal normal-case tracking-normal text-brand-light/45 group-hover:text-brand-light/70">
+                  {site.socialHandles[id]}
+                </span>
+              </a>
+            </li>
+          ))}
+          <li>
+            <a
+              href={`mailto:${site.email}`}
+              className="group inline-flex flex-col items-center gap-1.5 font-ui text-[14px] text-brand-light/80 transition-colors duration-300 ease-premium hover:text-white"
+            >
+              <span className="font-semibold tracking-wide">Email</span>
+              <span className="text-[13px] font-normal normal-case tracking-normal text-brand-light/45 group-hover:text-brand-light/70">
+                {site.email}
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
     </main>
   );
 }

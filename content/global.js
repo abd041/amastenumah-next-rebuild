@@ -36,7 +36,7 @@ export const site = {
   },
 
   metadata: {
-    title: "Amas Tenumah — Customer Service Authority",
+    title: "Amas Tenumah",
     description:
       "Customer service isn't broken. It's working exactly as designed. Amas Tenumah is the keynote speaker and author who explains why.",
     openGraph: {

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -55,18 +54,15 @@ export default function Nav() {
         {site.accessibility.skipToContent}
       </a>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-8 px-6 py-5">
-        <Link href="/" className="shrink-0">
-          <Image
-            width={site.logo.width}
-            height={site.logo.height}
-            src={site.logo.src}
-            className="h-11 w-auto transition-transform duration-400 ease-premium hover:scale-[1.02] md:h-[3.2rem]"
-            alt={site.logo.alt}
-            sizes="160px"
-            fetchPriority="high"
-            unoptimized
-            style={{ maxWidth: "100%" }}
-          />
+        <Link
+          href="/"
+          className="group shrink-0 font-display text-[clamp(1.65rem,4.2vw,2.35rem)] uppercase leading-none tracking-[0.14em] text-brand-charcoal transition-transform duration-400 ease-premium hover:scale-[1.02]"
+        >
+          <span className="text-brand-red">A</span>
+          <span>MAS</span>
+          <span className="mx-1.5 inline-block h-[0.78em] w-px translate-y-[0.06em] bg-brand-red align-middle opacity-90" aria-hidden />
+          <span>TENUMAH</span>
+          <span className="sr-only"> — {site.logo.alt}</span>
         </Link>
 
         <nav aria-label={site.accessibility.menuNavLabel} className="hidden items-center gap-8 lg:flex">
