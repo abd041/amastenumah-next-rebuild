@@ -17,7 +17,10 @@ export const hold = {
     "Most organizations don't have a \"bad attitude\" problem — they have an incentive problem dressed up as a training problem.\n\nHOLD names the design choices that create suffering for customers and employees — and what to do instead.",
   thesis: "Customer service isn't broken. It's working exactly as designed.",
   buyLinks: [
-    { label: "Amazon", href: "https://www.amazon.com/s?k=HOLD+Amas+Tenumah" },
+    {
+      label: "Amazon",
+      href: "https://www.amazon.com/HOLD-Suffering-Economy-Customer-Service-ebook/dp/B0FXN4PQRW/ref=sr_1_1?dib=eyJ2IjoiMSJ9.bUhjRSDcCoU_wiWJWzZy3Q.We9YsJTQrLRvO3Fk86TUxtKbmOq_kjdB5iwWo0uTrGQ&dib_tag=se&keywords=holdamas+tenumah&qid=1776035774&sr=8-1",
+    },
     { label: "Barnes & Noble", href: "https://www.barnesandnoble.com/s/HOLD%20Amas%20Tenumah" },
   ],
   /** Below retailer buttons — single mailto line. */

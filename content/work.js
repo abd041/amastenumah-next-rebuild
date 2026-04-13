@@ -16,7 +16,7 @@ export const work = {
   sectionAppearancesTitle: "Media appearances",
   sectionVideosTitle: "Video library",
   sectionConferenceTitle: "The Stages",
-  sectionConferenceIntro: "Full-length clips and stage moments. Stills from the road below.",
+  sectionConferenceIntro: "Stills from the road.",
   /** Shown under “The Stages”; remainder of `conferenceVideos` is optional for future use. */
   selectedTalksCount: 3,
   stageGallery: {
@@ -165,7 +165,8 @@ export const work = {
   videos: [
     {
       title: "Panel — Five9 CX Summit 2023",
-      description: "Automation in service.",
+      description:
+        "Fireside chat at Five9 CX Summit 2023. Two minutes on why replacing humans with AI isn’t the answer executives think it is.",
       youtubeId: "5uHQDhf_RZA",
       category: "panel",
     },

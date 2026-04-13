@@ -145,30 +145,6 @@ export default function Page({ searchParams }) {
               {work.sectionConferenceIntro}
             </p>
           </Reveal>
-          <div className="mt-14 flex flex-col gap-10 md:mt-16 md:gap-12">
-            {work.conferenceVideos.slice(0, work.selectedTalksCount ?? 3).map((item, i) => (
-              <Reveal key={item.link} delayMs={120 + i * 90}>
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group mx-auto block w-full max-w-[52rem] rounded-[14px] border border-white/[0.08] border-l-[3px] border-l-brand-red/80 bg-gradient-to-br from-[#2a2a2a]/95 via-[#1c1c1c]/98 to-black/90 px-8 py-10 shadow-[0_20px_56px_-28px_rgba(0,0,0,0.75)] transition-[transform,box-shadow,border-color] duration-300 ease-premium hover:-translate-y-1 hover:border-brand-red/35 hover:shadow-[0_28px_64px_-28px_rgba(255,59,59,0.12),0_24px_48px_-24px_rgba(0,0,0,0.65)] md:px-12 md:py-12 motion-reduce:hover:translate-y-0"
-                >
-                  <p className="font-ui text-xs font-bold uppercase tracking-[0.2em] text-brand-red">Watch</p>
-                  <h3 className="mt-4 font-display text-[clamp(1.65rem,3.2vw,2.15rem)] uppercase leading-[1.12] tracking-wide text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-5 max-w-[46rem] font-body text-[17px] leading-relaxed text-brand-light/[0.88] md:text-[18px]">
-                    {item.description}
-                  </p>
-                  <span className="link-gradient-underline mt-8 inline-flex items-center gap-1 pb-1 font-ui text-sm font-bold uppercase tracking-[0.12em] text-brand-red transition-colors duration-300 ease-premium group-hover:text-white">
-                    <span>{work.watchOnYoutubeLabel}</span>
-                    <span className="transition-transform duration-300 ease-premium group-hover:translate-x-1">→</span>
-                  </span>
-                </a>
-              </Reveal>
-            ))}
-          </div>
           <div className="relative mt-20 md:mt-24">
             <StageGallery items={work.stageStills} labels={work.stageGallery} />
           </div>
